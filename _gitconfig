@@ -1,0 +1,10 @@
+[user]
+	name = Jannik Beyerstedt
+	email = code@jannikbeyerstedt.de
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vi
+[push]
+	default = matching
+[color]
+	ui = auto
