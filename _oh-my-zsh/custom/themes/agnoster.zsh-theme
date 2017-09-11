@@ -84,6 +84,13 @@ prompt_context() {
   fi
 }
 
+# My Context: hostname only
+prompt_my_context() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black default "%(!.%{%F{yellow}%}.)%m"
+  fi
+}
+
 # Git: branch/detached head, dirty status
 prompt_git() {
   (( $+commands[git] )) || return
@@ -218,6 +225,7 @@ build_prompt() {
   prompt_status
   prompt_virtualenv
 #  prompt_context
+  prompt_my_context
   prompt_dir
 #  prompt_git
   prompt_bzr
