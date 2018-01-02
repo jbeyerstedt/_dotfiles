@@ -47,7 +47,7 @@ endfunction
 " ----------------------------------------------------------------------------
 
 set autoindent              " Carry over indenting from previous line
-set autoread                " Don't bother me hen a file changes
+set autoread                " Don't bother me when a file changes
 set autowrite               " Write on :next/:prev/^Z
 set backspace=indent,eol,start
                             " Allow backspace beyond insertion point
@@ -84,7 +84,7 @@ set matchtime=2             " Tenths of second to hilight matching paren
 set modelines=5             " How many lines of head & tail to look for ml's
 silent! set mouse=nvc       " Use the mouse, but not in insert mode
 set nobackup                " No backups left after done editing
-set nonumber                " No line numbers to start
+set number                  " Show line numbers to start
 set visualbell t_vb=        " No flashing or beeping at all
 set nowritebackup           " No backups made while editing
 set ruler                   " Show row/col and percentage
