@@ -1,6 +1,10 @@
 #!/bin/sh
 cd ~/
 
+# install fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --key-bindings --no-completion --no-update-rc
+
 # repo must have been cloned to ~/_dotfiles
 ln -s ~/_dotfiles/_tmux.conf ~/.tmux.conf
 ln -s ~/_dotfiles/_gitignore_global ~/.gitignore_global
