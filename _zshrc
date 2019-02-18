@@ -1,4 +1,5 @@
 # Unified zshrc of Jannik Beyerstedt
+export TERM=xterm-256color
 
 DEFAULT_USER="jannik"
 DISABLE_UPDATE_PROMPT=true
@@ -51,8 +52,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export TERM=xterm-256color
-
 if [ "$(uname)" != "Darwin" ]; then
   export LANG="en_US.UTF-8"
   export LC_CTYPE="en_US.UTF-8"
