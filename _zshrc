@@ -68,7 +68,7 @@ if [ "$(uname)" != "Darwin" ]; then
 fi
 
 # load host specific settings
-[[ -f ".zshrc-host" ]] && source .zshrc-host
+[[ -f "$HOME/.zshrc-host" ]] && source $HOME/.zshrc-host
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
