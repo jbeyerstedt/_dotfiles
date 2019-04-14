@@ -8,3 +8,5 @@
 	default = matching
 [color]
 	ui = auto
+[help]
+	autocorrect = true
