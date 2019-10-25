@@ -31,20 +31,20 @@ prompt_status() {
 prompt_context() {
   if [[ -n "$SSH_CLIENT" ]]; then
     if [[ "$USER" != "$DEFAULT_USER" ]]; then
-      echo -n "%{%F{green}%}%n@%m%{$reset_color%} "
+      echo -n "%{$terminfo[bold]%F{green}%}%n@%m%{$reset_color%}:"
     else
-      echo -n "%{%F{green}%}@%m%{$reset_color%} "
+      echo -n "%{$terminfo[bold]%F{green}%}@%m%{$reset_color%}:"
     fi
   else
     if [[ "$USER" != "$DEFAULT_USER" ]]; then
-      echo -n "%{%F{green}%}%n%{$reset_color%} "
+      echo -n "%{$terminfo[bold]%F{green}%}%n%{$reset_color%}:"
     fi
   fi
 }
 
 # Dir: current working directory
 prompt_dir() {
-  echo -n "%{$terminfo[bold]%F{blue}%}%~%{$reset_color%} "
+  echo -n "%{%F{blue}%}%~%{$reset_color%} "
 }
 
 # Virtualenv: current working virtualenv (TODO: test this)
@@ -75,9 +75,9 @@ prompt_git() {
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
     if [[ -n $dirty ]]; then
-      echo -n "%{%F{cyan}%}(%{%F{yellow}%}"
+      echo -n "%{$terminfo[bold]%F{cyan}%}(%{%F{yellow}%}"
     else
-      echo -n "%{%F{cyan}%}(%{%F{green}%}"
+      echo -n "%{$terminfo[bold]%F{cyan}%}(%{%F{green}%}"
     fi
 
     if [[ -e "${repo_path}/BISECT_LOG" ]]; then
