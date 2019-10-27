@@ -20,7 +20,7 @@ ZSH_THEME="jtbx"
 # HYPHEN_INSENSITIVE="true"
 
 # Oh-my-zsh Update settings
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line to disable colors in ls.
