@@ -8,7 +8,7 @@
 # - currently none
 #
 # Output: # $status, $venv, user@host $dir $git_status, exit_code
-#         $ 
+#         $
 
 
 
@@ -16,15 +16,13 @@
 # Each component will draw itself, and hide itself if no information needs to be shown
 
 # Status:
-# - am I root
 # - are there background jobs?
 prompt_status() {
   local -a symbols
 
-  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡ %{$reset_color%}"
-  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙ %{$reset_color%}"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙%{$reset_color%}"
 
-  if [[ -n "$symbols" ]] && echo -n "$symbols "
+  if [[ -n "$symbols" ]] && echo -n "$symbols"
 }
 
 # Context: user@hostname (who am I and where am I)
