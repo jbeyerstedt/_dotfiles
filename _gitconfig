@@ -6,4 +6,4 @@
 [color]
 	ui = auto
 [help]
-	autocorrect = true
+	autocorrect = 1
