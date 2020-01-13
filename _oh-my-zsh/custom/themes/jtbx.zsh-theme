@@ -45,11 +45,14 @@ prompt_dir() {
   echo -n "%{%F{blue}%}%~%{$reset_color%} "
 }
 
-# Virtualenv: current working virtualenv (TODO: test this)
+# Virtualenv: current working virtualenv
+#disable promt manupulation by virtualenv's bin/activate
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 prompt_virtualenv() {
   local virtualenv_path="$VIRTUAL_ENV"
   if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-    echo -n "(`basename $virtualenv_path`) "
+    echo -n "%{%F{yellow}%}(`basename $virtualenv_path`)%{$reset_color%} "
   fi
 }
 
@@ -106,7 +109,7 @@ prompt_git() {
 build_prompt() {
   RETVAL=$?
   prompt_status
-#   prompt_virtualenv
+  prompt_virtualenv
   prompt_context
   prompt_dir
   prompt_git
