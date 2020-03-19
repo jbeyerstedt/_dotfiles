@@ -10,6 +10,8 @@ ln -s ~/_dotfiles/_tmux.conf ~/.tmux.conf
 ln -s ~/_dotfiles/_gitignore_global ~/.gitignore_global
 ln -s ~/_dotfiles/_gitconfig ~/.gitconfig
 ln -s ~/_dotfiles/_vimrc ~/.vimrc
+ln -s ~/_dotfiles/_oh-my-zsh/custom/themes/agnoster.zsh-theme ~/.oh-my-zsh/custom/themes/agnoster.zsh-theme
+ln -s ~/_dotfiles/_oh-my-zsh/custom/themes/jtbx.zsh-theme ~/.oh-my-zsh/custom/themes/jtbx.zsh-theme
 
 # install vim plugins
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
